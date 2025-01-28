@@ -7,6 +7,6 @@ const { protectAdmin } = require('../middlewares/authMiddleware');
 
 router.post('/project', upload.single('imageFile'), protectAdmin, addProject);
 router.put('/updateProject/:id', upload.single('imageFile'), protectAdmin, editProject);
-router.get('/', getProjects);
+router.get('/projects', getProjects);
 
 module.exports = router;
