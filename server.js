@@ -5,10 +5,9 @@ const mongoDBConnection = require('./config/dbConfig');
 const adminRoute = require('./routes/adminRoute');
 const authRoute = require('./routes/authRoute');
 const stackRoute = require('./routes/stackRoute');
-// const productRoute = require('./routes/productRoute');
 const homeRoute = require('./routes/homeRoute');
 const serviceRoute = require('./routes/serviceRoute');
-const aboutRoute = require('./routes/aboutRoute');
+const aboutRoute = require('./routes/AboutRoute');
 const stackGroupRoute = require('./routes/stackGroupRoute');
 const contactRoute = require('./routes/contactRoute');
 const projectRoute = require('./routes/projectRoute');
@@ -19,17 +18,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use(
-//     cors({
-//       credentials: true,
-//       origin: process.env.CORS_SERVER,
-//     })
-// );
-
 app.use("/api/auth/admin", adminRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/", stackRoute);
-// app.use("/api", productRoute);
 app.use("/api", homeRoute);
 app.use("/api", serviceRoute)
 app.use("/api/", aboutRoute);
