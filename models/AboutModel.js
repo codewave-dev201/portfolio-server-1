@@ -18,7 +18,7 @@ const AboutModel = new mongoose.Schema(
             type: String,
             required: true,
             trim: true,
-            match: [/^\d{10,15}$/, 'Invalid phone number'], // Adjust pattern as needed
+            // match: [/^\d{10,15}$/, 'Invalid phone number'], // Adjust pattern as needed
         },
         email: {
             type: String,
