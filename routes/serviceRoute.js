@@ -8,6 +8,6 @@ const { protectAdmin } = require('../middlewares/authMiddleware');
 router.post('/service', upload.single('imageFile'), protectAdmin, addService);
 router.put('/updateService/:id', upload.single('imageFile'), protectAdmin, editService);
 // router.delete('/:id', protectAdmin, deleteService); // Uncomment if deleteService is added
-router.get('/', getServices);
+router.get('/services', getServices);
 
 module.exports = router;
