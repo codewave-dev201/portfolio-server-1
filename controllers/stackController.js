@@ -3,7 +3,8 @@ const cloudinary = require('cloudinary').v2;
 
 // Add a new stack
 const addStack = async (req, res) => {
-    try {
+    try { 
+        const { toolName } = req.body;
         const imageUrl = req.file.path; // Extract the file path from the uploaded file
 
         console.log("Uploaded File:", req.file);
@@ -14,6 +15,7 @@ const addStack = async (req, res) => {
 
         const newStack = new Stack({
             imageUrl,
+            toolName,
         });
 
         await newStack.save();
@@ -28,6 +30,8 @@ const addStack = async (req, res) => {
 // Edit an existing stack
 const editStack = async (req, res) => {
     try {
+
+        const { toolName } = req.body:
         const stackId = req.params.id; // ID of the stack to be updated
         const imageFile = req.file; // New image file from the request
 
@@ -44,6 +48,8 @@ const editStack = async (req, res) => {
             });
             existingStack.imageUrl = result.secure_url; // Update image URL
         }
+
+        Stack.toolName = toolName || Stack.toolName;
 
         await existingStack.save();
         return res.status(200).json({ message: 'Stack updated successfully', stack: existingStack });
