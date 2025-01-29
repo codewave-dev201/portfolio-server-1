@@ -7,6 +7,10 @@ const StackModel = new mongoose.Schema(
             required: true,
             match: [/^https?:\/\/[a-zA-Z0-9.-]+(?:\/[a-zA-Z0-9&%=~_.-]*)*/, 'Invalid image URL'],
         },
+        toolName: {
+            type: String,
+            required: true,
+        },
     },
     { timestamps: true } // Automatically includes `createdAt` and `updatedAt`
 );
