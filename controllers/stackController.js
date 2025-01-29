@@ -31,7 +31,7 @@ const addStack = async (req, res) => {
 const editStack = async (req, res) => {
     try {
 
-        const { toolName } = req.body:
+        const { toolName } = req.body;
         const stackId = req.params.id; // ID of the stack to be updated
         const imageFile = req.file; // New image file from the request
 
