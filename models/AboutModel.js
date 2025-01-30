@@ -48,15 +48,15 @@ const AboutModel = new mongoose.Schema(
             required: true,
         },
         completedProjects: {
-            type: String,
+            type: Number,
             required: true,
         },
         happyCustomers: {
-            type: String,
+            type: Number,
             required: true,
         },
         awardsWon: {
-            type: String,
+            type: Number,
             required: true,
         },
         cvUrl: {
