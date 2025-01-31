@@ -6,9 +6,9 @@ const {
 } = require('../controllers/contactController');
 
 
-const { protectAdmin } = require('../middlewares/authMiddleware'); // ProtectAdmin remains
+// const { protectAdmin } = require('../middlewares/authMiddleware'); // ProtectAdmin remains
 
-router.post('/contact', protectAdmin, sendFormDetails);
+router.post('/contact', sendFormDetails);
 router.get('/getDetails', getContactFormSubmissions);
 
 module.exports = router;
